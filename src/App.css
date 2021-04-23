@@ -39,11 +39,30 @@
 .input {
   display: flex;
   margin: 15px;
+  align-items: center;
+  justify-content: center;
 }
 .item {
+  justify-content: center;
   margin: 15px;
   display: flex;
 }
+
 .textfield {
   margin-right: 10px;
+  border-radius: 30px;
+  padding: 6px;
+  display: flex;
+  align-items: center;
+  color: #3f51b5;
+  border-style: solid;
+  border-width: 2px;
+}
+.textfield:hover {
+  background-color: #c3ccff;
+}
+.add {
+  background-color: #3f51b5;
+  color: white;
+  border-radius: 50%;
 }

@@ -1,10 +1,9 @@
 import React, { useState } from "react";
-import Chip from "@material-ui/core/Chip";
-import TextField from "@material-ui/core/TextField";
-import Button from "@material-ui/core/Button";
 import ScatterPlotRoundedIcon from "@material-ui/icons/ScatterPlotRounded";
+import AddIcon from "@material-ui/icons/Add";
 import "../App.css";
-import { borders } from "@material-ui/system";
+import { InputBase, Chip, Button } from "@material-ui/core";
+
 export default function Todos() {
   const [inputData, setInputData] = useState("");
   const [items, setItems] = useState([]);
@@ -28,17 +27,15 @@ export default function Todos() {
     <>
       <div className="input">
         <div className="textfield">
-          <TextField
-            variant="outlined"
-            label="Add Todo"
+          <ScatterPlotRoundedIcon />
+          <InputBase
+            className="inputbase"
+            placeholder="write here"
             value={inputData}
-            id="standard-size-small"
             onChange={(e) => setInputData(e.target.value)}
           />
+          <AddIcon className="add" onClick={addItem} />
         </div>
-        <Button color="primary" variant="contained" onClick={addItem}>
-          Add Todo
-        </Button>
       </div>
       <div className="itemHolder">
         {items.map((element, ind) => {

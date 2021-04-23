@@ -8,7 +8,7 @@ import EcoIcon from "@material-ui/icons/Eco";
 export default function NavBar() {
   return (
     <div>
-      <AppBar position="static" style={{ background: "#004d40" }}>
+      <AppBar position="static" style={{ background: "#3f51b5" }}>
         <Toolbar>
           <IconButton edge="start" color="inherit" aria-label="menu">
             <EcoIcon />

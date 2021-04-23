@@ -39,40 +39,42 @@ export default function Todos() {
 
   return (
     <>
-      <div className="input">
-        <div className="textfield">
-          <IconButton>
-            <ScatterPlotRoundedIcon className="add" />
-          </IconButton>
+      <div className="container">
+        <div className="input">
+          <div className="textfield">
+            <IconButton>
+              <ScatterPlotRoundedIcon className="add" />
+            </IconButton>
 
-          <InputBase
-            className="inputbase"
-            placeholder="write here"
-            value={inputData}
-            onChange={(e) => setInputData(e.target.value)}
-            onKeyPress={handleKeyPress}
-          />
-          <IconButton aria-label="menu">
-            <AddIcon className="add" onClick={addItem} />
+            <InputBase
+              className="inputbase"
+              placeholder="write here"
+              value={inputData}
+              onChange={(e) => setInputData(e.target.value)}
+              onKeyPress={handleKeyPress}
+            />
+            <IconButton aria-label="menu">
+              <AddIcon className="add" onClick={addItem} />
+            </IconButton>
+          </div>
+          <IconButton aria-label="menu" onClick={() => deleteAll()}>
+            <DeleteOutlineIcon className="deleteAll" />
           </IconButton>
         </div>
-        <IconButton aria-label="menu" onClick={() => deleteAll()}>
-          <DeleteOutlineIcon className="deleteAll" />
-        </IconButton>
-      </div>
-      <div className="itemHolder">
-        {items.map((element, ind) => {
-          return (
-            <div className="item" key={ind}>
-              <Chip
-                icon={<ScatterPlotRoundedIcon />}
-                label={element}
-                onDelete={() => deleteItem(ind)}
-                color="primary"
-              />
-            </div>
-          );
-        })}
+        <div className="itemHolder">
+          {items.map((element, ind) => {
+            return (
+              <div className="item" key={ind}>
+                <Chip
+                  icon={<ScatterPlotRoundedIcon />}
+                  label={element}
+                  onDelete={() => deleteItem(ind)}
+                  color="primary"
+                />
+              </div>
+            );
+          })}
+        </div>
       </div>
     </>
   );

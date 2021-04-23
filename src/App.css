@@ -42,11 +42,7 @@
   align-items: center;
   justify-content: center;
 }
-.itemHolder {
-  display: flex;
-  flex-direction: column-reverse;
-  align-items: center;
-}
+
 .item {
   margin: 15px;
 }

@@ -36,15 +36,26 @@
     transform: rotate(360deg);
   }
 }
+
+.container {
+  color: #3f51b5;
+  /* border-style: solid; */
+  border-width: 1px;
+  width: fit-content;
+  margin: auto;
+}
+.itemHolder {
+  margin-left: 14px;
+}
+.item {
+  display: flex;
+  margin: 15px;
+}
 .input {
   display: flex;
   margin: 15px;
   align-items: center;
   justify-content: center;
-}
-
-.item {
-  margin: 15px;
 }
 
 .textfield {
@@ -53,16 +64,17 @@
   padding: 5px;
   display: flex;
   align-items: center;
-  color: #3f51b5;
-  border-style: solid;
+  color: green;
+  /* border-style: solid; */
   border-width: 2px;
+  background-color: #e3f2fd;
 }
 /* .textfield:hover {
   background-color: #c3ccff;
 } */
 .add {
-  color: #3f51b5;
+  color: #0277bd;
 }
 .deleteAll {
-  color: red;
+  color: #ff5722;
 }

@@ -48,7 +48,7 @@ export default function Todos() {
 
             <InputBase
               className="inputbase"
-              placeholder="write here"
+              placeholder="write todo here"
               value={inputData}
               onChange={(e) => setInputData(e.target.value)}
               onKeyPress={handleKeyPress}
@@ -57,7 +57,11 @@ export default function Todos() {
               <AddIcon className="add" onClick={addItem} />
             </IconButton>
           </div>
-          <IconButton aria-label="menu" onClick={() => deleteAll()}>
+          <IconButton
+            color="secondary"
+            aria-label="menu"
+            onClick={() => deleteAll()}
+          >
             <DeleteOutlineIcon className="deleteAll" />
           </IconButton>
         </div>
@@ -70,6 +74,7 @@ export default function Todos() {
                   label={element}
                   onDelete={() => deleteItem(ind)}
                   color="primary"
+                  variant="default"
                 />
               </div>
             );

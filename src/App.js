@@ -6,7 +6,6 @@ document.body.style.overflow = "auto";
 function App() {
   return (
     <div className="App">
-      <NavBar />
       <Todos />
     </div>
   );

@@ -3,6 +3,8 @@ import ScatterPlotRoundedIcon from "@material-ui/icons/ScatterPlotRounded";
 import AddIcon from "@material-ui/icons/Add";
 import "../App.css";
 import { InputBase, Chip } from "@material-ui/core";
+import DeleteOutlineIcon from "@material-ui/icons/DeleteOutline";
+import IconButton from "@material-ui/core/IconButton";
 
 export default function Todos() {
   const [inputData, setInputData] = useState("");
@@ -31,6 +33,9 @@ export default function Todos() {
 
     setItems(updateditems);
   };
+  const deleteAll = () => {
+    setItems([]);
+  };
 
   return (
     <>
@@ -46,6 +51,9 @@ export default function Todos() {
           />
           <AddIcon className="add" onClick={addItem} />
         </div>
+        <IconButton aria-label="menu" onClick={() => deleteAll()}>
+          <DeleteOutlineIcon />
+        </IconButton>
       </div>
       <div className="itemHolder">
         {items.map((element, ind) => {

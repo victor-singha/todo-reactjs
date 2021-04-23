@@ -41,7 +41,10 @@ export default function Todos() {
     <>
       <div className="input">
         <div className="textfield">
-          <ScatterPlotRoundedIcon />
+          <IconButton>
+            <ScatterPlotRoundedIcon className="add" />
+          </IconButton>
+
           <InputBase
             className="inputbase"
             placeholder="write here"
@@ -49,10 +52,12 @@ export default function Todos() {
             onChange={(e) => setInputData(e.target.value)}
             onKeyPress={handleKeyPress}
           />
-          <AddIcon className="add" onClick={addItem} />
+          <IconButton aria-label="menu">
+            <AddIcon className="add" onClick={addItem} />
+          </IconButton>
         </div>
         <IconButton aria-label="menu" onClick={() => deleteAll()}>
-          <DeleteOutlineIcon />
+          <DeleteOutlineIcon className="deleteAll" />
         </IconButton>
       </div>
       <div className="itemHolder">

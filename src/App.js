@@ -1,5 +1,4 @@
 import "./App.css";
-import NavBar from "./Components/NavBar";
 import Todos from "./Components/Todos";
 
 document.body.style.overflow = "auto";

@@ -2,11 +2,20 @@ import React, { useState } from "react";
 import ScatterPlotRoundedIcon from "@material-ui/icons/ScatterPlotRounded";
 import AddIcon from "@material-ui/icons/Add";
 import "../App.css";
-import { InputBase, Chip, Button } from "@material-ui/core";
+import { InputBase, Chip } from "@material-ui/core";
 
 export default function Todos() {
   const [inputData, setInputData] = useState("");
   const [items, setItems] = useState([]);
+
+  const handleKeyPress = (event) => {
+    if (event.key === "Enter") {
+      if (inputData !== "") {
+        setItems([...items, inputData]);
+        setInputData("");
+      }
+    }
+  };
 
   const addItem = () => {
     if (inputData !== "") {
@@ -33,6 +42,7 @@ export default function Todos() {
             placeholder="write here"
             value={inputData}
             onChange={(e) => setInputData(e.target.value)}
+            onKeyPress={handleKeyPress}
           />
           <AddIcon className="add" onClick={addItem} />
         </div>

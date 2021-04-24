@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import ScatterPlotRoundedIcon from "@material-ui/icons/ScatterPlotRounded";
 import AddIcon from "@material-ui/icons/Add";
 import "../App.css";
@@ -7,8 +7,18 @@ import DeleteOutlineIcon from "@material-ui/icons/DeleteOutline";
 import IconButton from "@material-ui/core/IconButton";
 
 export default function Todos() {
+  //get data from local
+  const getLocalItems = () => {
+    let list = localStorage.getItem("lists");
+    if (list) {
+      return JSON.parse(localStorage.getItem("lists"));
+    } else {
+      return [];
+    }
+  };
+
   const [inputData, setInputData] = useState("");
-  const [items, setItems] = useState([]);
+  const [items, setItems] = useState(getLocalItems());
 
   const handleKeyPress = (event) => {
     if (event.key === "Enter") {
@@ -36,6 +46,11 @@ export default function Todos() {
   const deleteAll = () => {
     setItems([]);
   };
+
+  //add data to local storage
+  useEffect(() => {
+    localStorage.setItem("lists", JSON.stringify(items));
+  }, [items]);
 
   return (
     <>
